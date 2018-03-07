@@ -1,0 +1,57 @@
+* intro and history of opencv [10 - 20]
+- start of the project
+- installation
+- main modules/data types etc
+* Basics [60 - 70]
+- load, show and save image
+- image manipulation
+  + pixel manipulation
+  + add/subtract/multiply images
+- color space change
+  + gray
+  + rgb
+  + bgr
+  + CMYK
+- contrast and histogram manipulation
+  + Histogram matching (iPatch project)
+  + hist normalization
+  + brightness
+- drawing
+  + line
+  + ellipse
+  + rectangle
+- basic GUI
+  + mouse point recording (handin code)
+* Image filtering [15 - 20]
+- Thresholding
+- FFT
+- Convolution
+- low pass/blur
+- high pass/sharpen
+- edge detectors
+  + Canny
+  + sobel
+* Transforms and operations [60 - 70]
+- Hough
+- Affine transformation (billboard project)
+- image similarity
+- Morphology
+- corner detector
+  + Harris
+  + your own
+- Feature descriptors (optional)
+  + SURF
+* Image segmentation: [20 - 30]
+- color segmentation
+  - image -> video
+- template matching
+- watershed and countours
+(multiple method segmentation of the same image project)
+* Video [15 - 20]
+- file/camera input
+- writing video
+- background subtraction (handin code)
+* Deep image classification [10 - 15]
+- feature classification
+- Theano/Tensorflow/Keras etc
+- LeNet on mnist (handin code)
