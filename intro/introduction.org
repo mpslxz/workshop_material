@@ -1,8 +1,14 @@
 #+TITLE: Introduction to OpenCV
 #+AUTHOR: Mehran Pesteie
+#+DATE: Mar. 9, 2018
 #+OPTIONS: toc:nil timestamp:nil
+#+REVEAL_EXTRA_CSS: ./mod.css
+#+REVEAL_THEME: black
+#+REVEAL_TRANS: linear
+#+ATTR_HTML: :style text-align:left
 
 * Agenda
+
 - Brief summary
   + How opencv started
   + Main modules and data types
@@ -25,6 +31,7 @@
 - Video
 
 * How opencv started
+
 - An open source computer vision library under BSD license
 - Started at Intel for CPU-intensive tasks in 1999, which needed real-time processing
 - The purpose was to avoid reinventing the wheel a.k.a avoid redundant work
@@ -33,6 +40,7 @@
 - Virtually can be run on any OS
 
 * What can I do with OpenCV?
+#+ATTR_REVEAL: :frag (appear)
 - Make your own Photoshop!
 - Video processing
 - 3D reconstruction and modeling
@@ -43,6 +51,7 @@
 - And MUCH MUCN more!
 
 * Main modules
+
 - core: main building blocks of OpenCV.
 - imgproc: image processing functions such as morphology, edge detection etc.
 - calib3d: camera calibration and 3D reconstruction
@@ -53,11 +62,12 @@
 - ...
 
 * Some thoughts:
+#+ATTR_REVEAL: :frag (appear)
 - OpenCV is open source, hence virtually endless!
   + Great documentation. Use it as often as you need!
   + Bazillion tutorials, how-tos, code snippets.
 - OpenCV does not "solve" your CV problems. It gives you the TOOLS. YOU are the problem solver.
-- Efficiency is key!
+  + Efficiency is key!
 - We will just scratch the surface and try some algorithms
   + There is a lot to learn and experiment.
 - Keep it alive!

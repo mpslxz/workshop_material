@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Introduction to OpenCV</title>
+<meta name="author" content="(Mehran Pesteie)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="file:///Users/mehran/git/reveal.js/css/reveal.css"/>
+
+<link rel="stylesheet" href="file:///Users/mehran/git/reveal.js/css/theme/black.css" id="theme"/>
+
+<link rel="stylesheet" href="./mod.css"/>
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'file:///Users/mehran/git/reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Introduction to OpenCV</h1><h2 class="author">Mehran Pesteie</h2><h2 class="date">Mar. 9, 2018</h2>
+</section>
+
+<section>
+<section id="slide-org32cc985">
+<h2 id="org32cc985"><span class="section-number-2">1</span> Agenda</h2>
+<ul>
+<li>Brief summary
+<ul>
+<li>How opencv started</li>
+<li>Main modules and data types</li>
+
+</ul></li>
+<li>Basics
+<ul>
+<li>Loading, showing and saving images</li>
+<li>Image manipulation</li>
+<li>Color spaces</li>
+<li>Contrast and histogram maniputation</li>
+<li>Drawing tools</li>
+<li>Basic GUI</li>
+
+</ul></li>
+<li>Image filtering
+<ul>
+<li>Thresholding, FFT, Convolution, etc.</li>
+
+</ul></li>
+<li>Transformations 
+<ul>
+<li>Hough</li>
+<li>Affine transformation</li>
+<li>Morphology</li>
+<li>Feature discriptors</li>
+
+</ul></li>
+<li>Segmentation
+<ul>
+<li>Color, Contours and watershed</li>
+
+</ul></li>
+<li>Video</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgf9ab0ba">
+<h2 id="orgf9ab0ba"><span class="section-number-2">2</span> How opencv started</h2>
+<ul>
+<li>An open source computer vision library under BSD license</li>
+<li>Started at Intel for CPU-intensive tasks in 1999, which needed real-time processing</li>
+<li>The purpose was to avoid reinventing the wheel a.k.a avoid redundant work</li>
+<li>Written in C++ but has interfaces for Python, Java, MATLAB/OCTAVE and etc.</li>
+<li>Comptible with GPU and multithread processing</li>
+<li>Virtually can be run on any OS</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgbdd70c5">
+<h2 id="orgbdd70c5"><span class="section-number-2">3</span> What can I do with OpenCV?</h2>
+<ul>
+<li class="fragment appear">Make your own Photoshop!</li>
+<li class="fragment appear">Video processing</li>
+<li class="fragment appear">3D reconstruction and modeling</li>
+<li class="fragment appear">Stereo vision and depth perception</li>
+<li class="fragment appear">Virtual reality</li>
+<li class="fragment appear">Object detection and tracking</li>
+<li class="fragment appear">Deep learning</li>
+<li class="fragment appear">And MUCH MUCN more!</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orge99e32b">
+<h2 id="orge99e32b"><span class="section-number-2">4</span> Main modules</h2>
+<ul>
+<li>core: main building blocks of OpenCV.</li>
+<li>imgproc: image processing functions such as morphology, edge detection etc.</li>
+<li>calib3d: camera calibration and 3D reconstruction</li>
+<li>feature2d: feature descriptors and extractors</li>
+<li>videoio: video input/output</li>
+<li>highgui: high level GUI*</li>
+<li>ml: machine learning module*</li>
+<li>&#x2026;</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org676095c">
+<h2 id="org676095c"><span class="section-number-2">5</span> Some thoughts:</h2>
+<ul>
+<li class="fragment appear">OpenCV is open source, hence virtually endless!
+<ul>
+<li>Great documentation. Use it as often as you need!</li>
+<li>Bazillion tutorials, how-tos, code snippets.</li>
+
+</ul></li>
+<li class="fragment appear">OpenCV does not "solve" your CV problems. It gives you the TOOLS. YOU are the problem solver.
+<ul>
+<li>Efficiency is key!</li>
+
+</ul></li>
+<li class="fragment appear">We will just scratch the surface and try some algorithms
+<ul>
+<li>There is a lot to learn and experiment.</li>
+
+</ul></li>
+<li class="fragment appear">Keep it alive!
+<ul>
+<li>Share your code</li>
+<li>Contribute to the open source projects</li>
+<li>Spread out the knowledge</li>
+
+</ul></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org0cfb2ed">
+<h2 id="org0cfb2ed"><span class="section-number-2">6</span> Lets dive in!</h2>
+</section>
+</section>
+</div>
+</div>
+<script src="file:///Users/mehran/git/reveal.js/lib/js/head.min.js"></script>
+<script src="file:///Users/mehran/git/reveal.js/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'file:///Users/mehran/git/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: 'file:///Users/mehran/git/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'file:///Users/mehran/git/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'file:///Users/mehran/git/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: 'file:///Users/mehran/git/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+});
+</script>
+</body>
+</html>
