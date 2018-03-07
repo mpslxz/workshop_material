@@ -1,0 +1,68 @@
+#+TITLE: Introduction to OpenCV
+#+AUTHOR: Mehran Pesteie
+#+OPTIONS: toc:nil timestamp:nil
+
+* Agenda
+- Brief summary
+  + How opencv started
+  + Main modules and data types
+- Basics
+  + Loading, showing and saving images
+  + Image manipulation
+  + Color spaces
+  + Contrast and histogram maniputation
+  + Drawing tools
+  + Basic GUI
+- Image filtering
+  + Thresholding, FFT, Convolution, etc.
+- Transformations 
+  + Hough
+  + Affine transformation
+  + Morphology
+  + Feature discriptors
+- Segmentation
+  + Color, Contours and watershed
+- Video
+
+* How opencv started
+- An open source computer vision library under BSD license
+- Started at Intel for CPU-intensive tasks in 1999, which needed real-time processing
+- The purpose was to avoid reinventing the wheel a.k.a avoid redundant work
+- Written in C++ but has interfaces for Python, Java, MATLAB/OCTAVE and etc.
+- Comptible with GPU and multithread processing
+- Virtually can be run on any OS
+
+* What can I do with OpenCV?
+- Make your own Photoshop!
+- Video processing
+- 3D reconstruction and modeling
+- Stereo vision and depth perception
+- Virtual reality
+- Object detection and tracking
+- Deep learning
+- And MUCH MUCN more!
+
+* Main modules
+- core: main building blocks of OpenCV.
+- imgproc: image processing functions such as morphology, edge detection etc.
+- calib3d: camera calibration and 3D reconstruction
+- feature2d: feature descriptors and extractors
+- videoio: video input/output
+- highgui: high level GUI*
+- ml: machine learning module*
+- ...
+
+* Some thoughts:
+- OpenCV is open source, hence virtually endless!
+  + Great documentation. Use it as often as you need!
+  + Bazillion tutorials, how-tos, code snippets.
+- OpenCV does not "solve" your CV problems. It gives you the TOOLS. YOU are the problem solver.
+- Efficiency is key!
+- We will just scratch the surface and try some algorithms
+  + There is a lot to learn and experiment.
+- Keep it alive!
+  + Share your code
+  + Contribute to the open source projects
+  + Spread out the knowledge
+
+* Lets dive in!
