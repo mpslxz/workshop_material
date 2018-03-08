@@ -1,0 +1,16 @@
+* vignette effect
+#+BEGIN_SRC python
+center = (img_gray.shape[0]/2, img_gray.shape[1]/2)
+sigma = 20.
+i = np.arange(0, 512, 1, float)
+j = x[:,np.newaxis]
+mask = np.exp(-1.*np.sqrt((i-center[0])**2 + (j-center[1])**2)/sigma)
+#+END_SRC
+* highlights
+#+BEGIN_SRC python
+img_hls = cv.cvtColor(img_color, cv.COLOR_BGR2HLS)
+img_rgb = cv.cvtColor(img_color, cv.COLOR_BGR2RGB)
+color = np.array([255, 0, 0], dtype='uint8')
+idxs = np.where(img_hls[:,:,1] > 150)
+img_rgb[idxs] = color
+#+END_SRC
