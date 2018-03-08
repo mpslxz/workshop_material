@@ -20,7 +20,7 @@
   + Drawing tools
   + Basic GUI
 - Image filtering
-  + Thresholding, FFT, Convolution, etc.
+  + Thresholding, Convolution, etc.
 - Transformations 
   + Hough
   + Affine transformation

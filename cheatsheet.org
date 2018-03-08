@@ -14,3 +14,20 @@ color = np.array([255, 0, 0], dtype='uint8')
 idxs = np.where(img_hls[:,:,1] > 150)
 img_rgb[idxs] = color
 #+END_SRC
+* unsharp mask
+#+BEGIN_SRC python
+blurred = cv.GaussianBlur(img, (3, 3), sigmaX=5)
+blurred_inv = 255 - blurred
+scaled = blurred_inv * 0.1
+sharpened = img + scaled
+#+END_SRC
+* cartoon
+#+BEGIN_SRC python
+reduced = reduce_color(img_rgb, 64)
+blurred = cv.bilateralFilter(reduced, d=30, sigmaColor=40, sigmaSpace=40)
+edges = cv.Canny(blurred, 150, 200, 5)
+_, thresholded = cv.threshold(edges, 150, 255, cv.THRESH_BINARY_INV)
+mask = thresholded[:,:,np.newaxis]/255
+rgb_mask = np.tile(mask, (1,1,3))
+result = blurred*np.uint8(rgb_mask)
+#+END_SRC
