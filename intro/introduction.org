@@ -74,5 +74,7 @@
   + Share your code
   + Contribute to the open source projects
   + Spread out the knowledge
-
-* Lets dive in!
+* Marking for this workshop:
+- Quick practices and in-class projects [20%]
+- Final project and document [80%]
+* Let's dive in!
