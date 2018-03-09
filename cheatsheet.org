@@ -31,3 +31,20 @@ mask = thresholded[:,:,np.newaxis]/255
 rgb_mask = np.tile(mask, (1,1,3))
 result = blurred*np.uint8(rgb_mask)
 #+END_SRC
+* Timing
+|----------------------+-------------+--------------|
+| project              | time (mins) | notebook     |
+|----------------------+-------------+--------------|
+| vignette             |           5 | basics       |
+| overexposed          |           5 | basics       |
+| iPatch               |          45 | basics       |
+| convolutions         |           5 | transform    |
+| unsharp mask         |           5 | transform    |
+| cartoon effect       |           5 | transform    |
+| billboard            |          30 | transform2   |
+| improve segmentation |           5 | segmentation |
+| count 1s             |           5 | segmentation |
+| erase 1s             |           5 | segmentation |
+| cartoon to camera    |           5 | video        |
+|----------------------+-------------+--------------|
+
